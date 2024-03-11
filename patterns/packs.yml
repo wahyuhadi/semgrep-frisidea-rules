@@ -1,0 +1,7 @@
+packs:
+  all:
+    - laravel-sql-inject
+    - laravel-tainted-name-ssrf
+    - detected-bcrypt-hash  
+    - hardcoded-credential-kenalan
+    - mvc-missing-antiforgery
