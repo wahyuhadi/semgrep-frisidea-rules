@@ -1,0 +1,46 @@
+rules:
+  - id: token-push-github
+    patterns:
+      - pattern-either:
+          - pattern: |
+              "$X": {
+                ..., "BiteshipToken": "...",
+              }
+          - pattern: |
+              "$X": {
+                ..., "SendgridToken": "...",
+              }
+          - pattern: |
+              "$X": {
+                ..., "Token": "...",
+              }
+          - pattern: |
+              "$X": {
+                ..., "Key": "...",
+              }
+          - pattern: |
+              "$X": {
+                ..., "Secret": "...",
+              }
+    message: Detected Token / Key hardcoded in file push into github
+    metadata:
+      owasp:
+        - A01:2021 - Broken Access Control
+      cwe:
+        - "CWE-264: CWE CATEGORY: Permissions, Privileges, and Access Controls"
+      references:
+        - https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html
+      category: security
+      technology:
+        - aws
+      subcategory:
+        - vuln
+      likelihood: LOW
+      impact: HIGH
+      confidence: MEDIUM
+      license: Commons Clause License Condition v1.0[LGPL-2.1-only]
+      vulnerability_class:
+        - Improper Authorization
+    severity: WARNING
+    languages:
+      - json

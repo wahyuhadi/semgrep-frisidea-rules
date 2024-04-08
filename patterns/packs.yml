@@ -5,3 +5,4 @@ packs:
     - detected-bcrypt-hash  
     - hardcoded-credential-kenalan
     - mvc-missing-antiforgery
+    - token-push-github

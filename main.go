@@ -4,7 +4,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -46,7 +45,7 @@ func main() {
 			return nil
 		}
 
-		b, err := ioutil.ReadFile(path)
+		b, err := os.ReadFile(path)
 		if err != nil {
 			log.Println("error reading", path, ":", err)
 			return nil
@@ -70,7 +69,7 @@ func main() {
 	var packs PackFile
 
 	if *packyml != "" {
-		b, err := ioutil.ReadFile(*packyml)
+		b, err := os.ReadFile(*packyml)
 		if err != nil {
 			log.Fatalln("error reading", *packyml, ":", err)
 		}
