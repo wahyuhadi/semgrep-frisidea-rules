@@ -6,3 +6,5 @@ packs:
     - hardcoded-credential-kenalan
     - mvc-missing-antiforgery
     - token-push-github
+    - os-command-injection
+    - insecure-newtonsoft-deserialization
